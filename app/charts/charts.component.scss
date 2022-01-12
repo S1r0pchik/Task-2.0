@@ -1,0 +1,486 @@
+.container {
+    width: 60vw;
+    padding: 1.2vw 3vw 2.2vw 3vw;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    border: 1px dashed #000000;
+    border-radius: 4vw;
+
+    .random,
+    .push {
+        display: flex;
+        float: right;
+        font-size: 1.1vw;
+        width: 6vw;
+        height: 2vw;
+        margin: 0;
+        padding: 0;
+        margin-left: 1.5vw;
+        text-align: center;
+        vertical-align: middle;
+        background-color: #3f51b5;
+        color: white;
+        border: none;
+        border-radius: 0.5vw;
+
+        p {
+            margin: 0;
+            padding: 0;
+            margin-top: 0.2vw;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 500;
+        }
+    }
+
+    canvas {
+        margin-top: 1vw;
+    }
+}
+
+.add {
+    padding: 0;
+    height: 35vw;
+
+    button {
+        height: 20vw;
+        width: 20vw;
+        background-color: #3f51b5;
+        border: none;
+        color: white;
+        border-radius: 50%;
+        padding: 0;
+        margin: 0;
+        position: inherit;
+        margin-top: 7.5vw;
+        margin-left: 20vw;
+
+        img {
+            display: flex;
+            position: inherit;
+            width: 10vw;
+            height: 10vw;
+            padding: 0;
+            margin-left: 5vw;
+        }
+    }
+}
+
+.hide {
+    width: 2vw;
+    height: 1vw;
+    position: absolute;
+    right: 25vw;
+    border: none;
+    background-color: #fff;
+
+    img {
+        background-color: #fff;
+        width: 2vw;
+        height: 2.5vw;
+        position: absolute;
+        top: -0.75vw;
+        left: 0;
+    }
+}
+
+.close {
+    width: 2vw;
+    height: 2vw;
+    position: absolute;
+    right: 22vw;
+    border: none;
+    background-color: #fff;
+    margin-top: -0.5vw;
+
+    img {
+        background-color: #fff;
+        width: 2vw;
+        height: 2vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+.colors {
+    p {
+        position: absolute;
+        display: inline-block;
+        font-size: 2vw;
+    }
+
+    input {
+        border: none;
+        width: 5.3vw;
+        height: 2vw;
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        margin-top: 0.75vw;
+        background-color: #fff;
+        transition-duration: 0.5s;
+        border: 1px solid black;
+        border-radius: 0.25vw;
+    }
+
+    .inLine {
+        margin-left: 16.5vw;
+        padding: 0.25vw 1.3vw 0.25vw 0.25vw;
+    }
+
+    .inFill {
+        margin-left: 31.4vw;
+        padding: 0.25vw 1.3vw 0.25vw 0.25vw;
+    }
+
+    .lineC {
+        margin-left: 7vw;
+    }
+
+    .fillC {
+        margin-top: 0.1vw;
+        margin-left: 23vw;
+    }
+
+    .div {
+        width: 54vw;
+        height: 5vw;
+        padding: 1vw;
+        border-radius: 1vw;
+        transition-duration: 0.3s;
+    }
+
+    .div:hover input {
+        background-color: rgb(225, 225, 225);
+    }
+
+    .div:hover {
+        background-color: rgb(225, 225, 225);
+    }
+
+    .selectFill {
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        text-align: center;
+        width: 6vw;
+        height: 2vw;
+        border: 1px solid black;
+        margin-top: 0.65vw;
+        margin-left: 41.25vw;
+        font-size: 1.35vw;
+        border-radius: 0.25vw;
+    }
+
+    .fill {
+        margin-top: 0.1vw;
+        margin-left: 38vw;
+    }
+
+    input:hover {
+        cursor: pointer;
+    }
+}
+
+.buttons {
+    margin-top: 0.5vw;
+    width: 53vw;
+    height: 2.5vw;
+}
+
+.del {
+    opacity: 0;
+    transition-duration: 0.5s;
+    border: none;
+
+    width: 2vw;
+    height: 2vw;
+    padding: 0;
+    margin: 0;
+    margin-top: 0.6vw;
+    position: absolute;
+    right: 24vw;
+
+    img {
+        width: 100%;
+        height: 100%;
+        position: inherit;
+        top: 0;
+        left: 0;
+        padding: 0;
+    }
+}
+
+.colors:hover .del {
+    opacity: 1;
+    background-color: rgb(210, 210, 210);
+}
+
+.date {
+    position: absolute;
+    margin: 0;
+    margin-top: 0.5vw;
+    margin-left: 1.5vw;
+    font-size: 1.5vw;
+}
+
+.info {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    margin-top: 1.15vw;
+    margin-left: 12.35vw;
+    font-size: 1vw;
+    color: grey;
+}
+
+.selectType {
+    float: right;
+    font-size: 1.35vw;
+    width: 6vw;
+    height: 2vw;
+    margin: 0;
+    padding: 0;
+    margin-left: 1.5vw;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 0.25vw;
+}
+
+.arrow1 {
+    margin-left: 20.82vw;
+    margin-top: 1.575vw;
+    position: absolute;
+    width: 0.75vw;
+    height: 0.75vw;
+
+    img {
+        width: 0.5vw;
+        height: 0.5vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+.arrow2 {
+    margin-left: 35.72vw;
+    margin-top: 1.575vw;
+    position: absolute;
+    width: 0.75vw;
+    height: 0.75vw;
+
+    img {
+        width: 0.5vw;
+        height: 0.5vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+.arrow1:hover,
+.arrow2:hover {
+    cursor: pointer;
+}
+
+.date {
+    margin: 0;
+    margin-left: 0.6vw;
+    margin-top: 0.75vw;
+}
+
+img {
+    pointer-events: none;
+}
+
+.sortMenu {
+    width: 30vw;
+    height: 100vh;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    right: 0;
+    border-radius: 1vw 0 0 1vw;
+    z-index: 5;
+    text-align: center;
+    transition-duration: 0.3s;
+
+    .btns {
+        width: 100%;
+        height: 20vw;
+        position: absolute;
+
+        img {
+            width: 1.25vw;
+            height: 1.55vw;
+            padding: 0;
+            margin: 0;
+        }
+
+        .arrowUp {
+            margin-top: -0.1vw;
+        }
+
+        .arrowDown {
+            margin-top: 0.05vw;
+        }
+
+        button {
+            width: 14vw;
+            height: 5vw;
+            display: block;
+            border: 1px solid black;
+            background-color: #fff;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        button:hover {
+            transition-duration: 0.3s;
+            background-color: rgb(230, 230, 230);
+        }
+
+        p {
+            padding: 0;
+            margin: 0;
+            font-size: 2vw;
+            font-weight: bold;
+        }
+
+        .sortUp {
+            border-radius: 1vw 1vw 0 0;
+            margin-top: 5vw;
+            border-bottom: none;
+        }
+
+        .sortDown {
+            border-radius: 0 0 1vw 1vw;
+        }
+    }
+
+    .datepicker {
+        margin-top: 17.5vw;
+        width: 25vw;
+        height: 5vw;
+        font-size: 1.5vw;
+    }
+
+    .sort {
+        background-color: #3f51b5;
+        border: none;
+        border-radius: 1vw;
+        width: 10vw;
+        height: 5vw;
+        color: white;
+        margin-top: 2.5vw;
+        font-weight: bold;
+        font-size: 2.5vw;
+    }
+
+    .closeButton {
+        position: absolute;
+        right: 1vw;
+        top: 1vw;
+        width: 3vw;
+        height: 3vw;
+        padding: 0;
+        border: none;
+        background-color: #fff;
+
+        img {
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
+.closeSortMenu {
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    position: fixed;
+    background-color: #000;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    transition-duration: 0.3s;
+}
+
+.showSortMenu {
+    width: 12vw;
+    height: 12vw;
+    position: fixed;
+    top: calc(50% - 6vw);
+    right: 4vw;
+    font-size: 2.5vw;
+    font-weight: bold;
+    text-align: center;
+    background-color: #3f51b5;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background-color: #f2f5f7;
+}
+
+.goHome {
+    margin-top: 1vw;
+    margin-left: 1vw;
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+    width: 13.05vw;
+    height: 4.5vw;
+    position: relative;
+    padding: 1vw;
+    box-shadow: inset 0 0 0 0.25vw #000;
+    background-color: #fff;
+    cursor: pointer;
+
+    &:before {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        transform-origin: 0 bottom 0;
+        transform: scaleY(0);
+        transition: 0.3s ease-out;
+    }
+
+    &:hover {
+        .goHomeTitle {
+            color: #fff;
+            transition: 0.3s ease-out;
+        }
+
+        &:before {
+            transform: scaleY(1);
+        }
+    }
+}
+
+.goHomeTitle {
+    position: relative;
+    font-size: 2vw;
+    font-weight: 700;
+    line-height: 1.333;
+}

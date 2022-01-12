@@ -1,0 +1,101 @@
+<a class="goHome" routerLink="/">
+  <h2 class="goHomeTitle">На главную</h2>
+</a>
+<div class="container-fluid" id="content">
+  <div *ngFor="let elem of arr" class="container">
+    <button class="hide" (click)="hide(elem.ind)">
+      <img src="/assets/images/minus.png" alt="" />
+    </button>
+    <button class="close" (click)="close(elem.ind)">
+      <img src="/assets/images/cross.png" alt="" />
+    </button>
+
+    <div *ngIf="elem.isShow">
+      <canvas baseChart [type]="elem.type" [datasets]="elem.datasets" [labels]="elem.labels" [options]="elem.options">
+      </canvas>
+      <p class="date">
+        Date: {{ elem.date.getMonth() + 1 }}/{{ elem.date.getDate() }}/{{
+        elem.date.getFullYear()
+        }}
+      </p>
+      <p class="info">MM/DD/YYYY</p>
+      <div class="buttons">
+        <button class="random" (click)="randomize(elem.ind)">
+          <p>Random</p>
+        </button>
+        <button class="push" (click)="push(elem.ind)">
+          <p>Push</p>
+        </button>
+        <mat-select class="selectType" (selectionChange)="changeType($event, elem.ind)" value="{{ elem.type }}">
+          <mat-option value="line">line</mat-option>
+          <mat-option value="bar">bar</mat-option>
+        </mat-select>
+      </div>
+
+      <div *ngFor="let it of elem.colors" class="colors">
+        <div class="div">
+          <p style="margin-left: -0.5vw">{{ it.name }}</p>
+          <p class="lineC">Line Color</p>
+          <input class="inLine" (input)="borderColor($event, elem.ind, it.ind)" value="{{ it.borderColor }}"
+            type="color" />
+          <div class="arrow1">
+            <img src="assets/images/arrow.png" />
+          </div>
+          <p class="fillC">Fill Color</p>
+          <input class="inFill" (input)="backgroundColor($event, elem.ind, it.ind)" value="{{ it.backgroundColor }}"
+            type="color" />
+          <p class="fill">Fill</p>
+          <div class="arrow2">
+            <img src="assets/images/arrow.png" />
+          </div>
+          <mat-select class="selectFill" (selectionChange)="changeFill($event, elem.ind, it.ind)" value="{{ it.fill }}">
+            <mat-option value="origin">Fill</mat-option>
+            <mat-option value="none">None</mat-option>
+          </mat-select>
+          <button class="del" (click)="deleteColor($event, elem.ind, it.ind)">
+            <img src="/assets/images/gray_cross.png" />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container add">
+    <button (click)="add()">
+      <img src="/assets/images/plus.png" alt="" />
+    </button>
+  </div>
+</div>
+
+<button (click)="showSortMenu()" class="showSortMenu">Sort Menu</button>
+
+<div class="sortMenu" [ngStyle]="styleMenu">
+  <div class="btns">
+    <button [ngStyle]="styleSortUp" class="sortUp" (click)="changeUp(true)">
+      <p>Sort <img class="arrowUp" src="/assets/images/arrowUp.png" /></p>
+    </button>
+    <button [ngStyle]="styleSortDown" class="sortDown" (click)="changeUp(false)">
+      <p>Sort <img class="arrowDown" src="/assets/images/arrowDown.png" /></p>
+    </button>
+  </div>
+
+  <button class="closeButton" (click)="closeSortMenu()">
+    <img src="/assets/images/cross.png" alt="" />
+  </button>
+
+  <mat-form-field class="datepicker">
+    <mat-label>Enter a date range</mat-label>
+    <mat-date-range-input [rangePicker]="picker" id="picker">
+      <input matStartDate placeholder="MM/DD/YYYY" id="minDate" (dateChange)="changeMinDate($event)"
+        (input)="changeMinDate($event)" />
+      <input matEndDate placeholder="MM/DD/YYYY" id="maxDate" (dateChange)="changeMaxDate($event)"
+        (input)="changeMaxDate($event)" />
+    </mat-date-range-input>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+  </mat-form-field>
+
+  <button class="sort" (click)="sort()">Sort</button>
+</div>
+
+<button [ngStyle]="styleClose" class="closeSortMenu" id="closeSortMenu" (click)="closeSortMenu()"></button>

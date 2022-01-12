@@ -1,0 +1,18 @@
+<a class="goHome" routerLink="/">
+    <h2 class="goHomeTitle">На главную</h2>
+</a>
+
+<mat-form-field class="form" appearance="fill">
+    <mat-label>Note</mat-label>
+    <input #input matInput placeholder="Write note" (keyup.enter)="add(input.value); input.value = ''" autocomplete="off">
+</mat-form-field>
+<button (click)="add(input.value)" class="add">Add note</button>
+<button (click)="delete()" class="delete">Delete selected</button>
+
+<div *ngFor="let it of arr" class="notes">
+    <div class="note">
+        <mat-checkbox  [checked]='it.checked' (input)="check(it.ind)" class="checkbox"></mat-checkbox>
+        <h2 class="text" [style.textDecoration]="it.style">{{ it.text }}</h2>
+        <h2 class="date" [style.textDecoration]="it.style">{{ it.date }}</h2>
+    </div>
+</div>
